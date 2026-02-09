@@ -193,7 +193,7 @@ function listTmuxSessions() {
 function capturePaneOutput(sessionName, lines = 200) {
   try {
     const output = execSync(
-      `tmux capture-pane -t ${sessionName} -p -S -${lines} 2>/dev/null`,
+      `tmux capture-pane -e -t ${sessionName} -p -S -${lines} 2>/dev/null`,
       { encoding: 'utf-8', timeout: 5000 }
     );
     return output;
