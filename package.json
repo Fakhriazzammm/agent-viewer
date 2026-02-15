@@ -4,7 +4,8 @@
   "description": "Kanban board for managing Claude Code agents in tmux",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "node -e \"const fs=require('fs'); console.log('Validating application...'); ['server.js','public/index.html','package.json'].forEach(f => {if(!fs.existsSync(f))throw new Error('Missing: '+f)}); console.log('✓ Application ready for deployment')\""
   },
   "dependencies": {
     "express": "^4.21.0"
